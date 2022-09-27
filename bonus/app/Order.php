@@ -6,7 +6,7 @@ class Order extends Cart {
     protected $totalCost;
     protected $totalVolume;
     protected $shippingCost;
-    protected $user;
+    private $user;
 
     public function __construct($products, $user) {
         parent::__construct($products);
@@ -16,7 +16,7 @@ class Order extends Cart {
         $this->user = $user;
     }
 
-    public function setTotalCost() {
+    protected function setTotalCost() {
         $total = 0;
         foreach ( $this->getProducts() as $product ) {
             $total += $product['product']->price * $product['quantity'];
@@ -28,7 +28,7 @@ class Order extends Cart {
         return $this->totalCost;
     }
 
-    public function setTotalVolume() {
+    protected function setTotalVolume() {
         $total = 0;
         foreach ( $this->getProducts() as $product ) {
             $total += $product['product']->volume * $product['quantity'];
@@ -40,13 +40,13 @@ class Order extends Cart {
         return $this->totalVolume;
     }
 
-    public function setShippingCost() {
-        $totalCost = $this->getTotalCost();
+    protected function setShippingCost() {
+        $totalCost = $this->totalCost;
         $shippingCost = 0;
         if ( $totalCost > 200 )
         $shippingCost = 0;
         else {
-            $totalVolume = $this->getTotalVolume();
+            $totalVolume = $this->totalVolume;
             if ( $totalVolume > 100 )
                 $shippingCost = 50;
             if ( $totalVolume > 200 )
@@ -59,5 +59,9 @@ class Order extends Cart {
 
     public function getShippingCost() {
         return $this->shippingCost;
+    }
+
+    public function getUser() {
+        return $this->user;
     }
 }
