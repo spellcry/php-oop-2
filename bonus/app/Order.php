@@ -47,6 +47,8 @@ class Order extends Cart {
         $shippingCost = 0;
         else {
             $totalVolume = $this->totalVolume;
+            if ( $totalVolume <= 100 )
+                $shippingCost = 10;
             if ( $totalVolume > 100 )
                 $shippingCost = 50;
             if ( $totalVolume > 200 )
