@@ -3,7 +3,7 @@
 include_once __DIR__ . '/Product.php';
 
 class Cart {
-    public $products;
+    private $products;
 
     public function __construct($products) {
         if ( count($products) > 0 ) {
@@ -14,5 +14,9 @@ class Cart {
         } else {
             $this->products = [];
         }
+    }
+
+    public function getProducts() {
+        return $this->products;
     }
 }

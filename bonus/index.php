@@ -51,7 +51,7 @@ $param = [
     'length' => 100,
     'depth' => 60,
     'color' => 'Light Green',
-    'volume' => 0.15
+    'volume' => 100.15
 ];
 
 $cuccia = new DogBed($param);
@@ -89,5 +89,10 @@ $order = new Order($products);
 
 var_dump($order);
 
+foreach ( $order->getProducts() as $product ) {
+    var_dump($product);
+}
+
 echo "Costo Totale: " . $order->getTotalCost() . "<br>";
-echo "Volume Totale: " . $order->getTotalVolume();
+echo "Volume Totale: " . $order->getTotalVolume() . "<br>";
+echo "Costi di spedizione: " . $order->getShippingCost();
