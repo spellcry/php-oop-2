@@ -12,8 +12,7 @@ $param = [
     'brand' => 'PLATINUM NATURAL',
     'price' => 101.99,
     'expiration-date' => '29/01/2023',
-    'volume' => 0.5,
-    'weight' => 20
+    'volume' => 0.5
 ];
 
 $crocchetteM = new PetFood($param);
@@ -38,8 +37,7 @@ $param = [
     'price' => 10.99,
     'type' => 'Pallina',
     'color' => 'Blue',
-    'volume' => 0.1,
-    'weight' => 0.5
+    'volume' => 0.1
 ];
 
 $pallina = new Toy($param);
@@ -91,8 +89,5 @@ $order = new Order($products);
 
 var_dump($order);
 
-foreach ( $order as $product ) {
-    var_dump($product);
-}
-
-echo "Costo Totale: " . $order->getTotalCost();
+echo "Costo Totale: " . $order->getTotalCost() . "<br>";
+echo "Volume Totale: " . $order->getTotalVolume();
