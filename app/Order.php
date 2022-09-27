@@ -11,7 +11,7 @@ class Order extends Cart {
     public function getTotalCost() {
         $total = 0;
         foreach ( $this->products as $product ) {
-            $total = $product['product']->price * $product['quantity'];
+            $total += $product['product']->price * $product['quantity'];
         }
         return $total;
     }

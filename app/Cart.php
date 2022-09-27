@@ -6,6 +6,13 @@ class Cart {
     public $products;
 
     public function __construct($products) {
-        count($products) > 0 ? $this->products = $products : null;
+        if ( count($products) > 0 ) {
+            $filteredProducts = array_filter($products, function ($product) {
+                return array_key_exists('product', $product) && array_key_exists('quantity', $product) && $product['product'] instanceof Product;
+            });
+            $this->products = $filteredProducts;
+        } else {
+            $this->products = [];
+        }
     }
 }
