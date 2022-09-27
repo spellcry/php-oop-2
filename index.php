@@ -45,15 +45,15 @@ $param = [
 $pallina = new Toy($param);
 
 $param = [
-    'name' => 'Pallina che lampeggia',
+    'name' => 'Cuccia grande',
     'poster' => 'Poster del prodotto',
     'description' => 'Descrizione del prodotto',
     'brand' => 'Una marca a caso',
-    'price' => 10.99,
+    'price' => 50.99,
     'length' => 100,
     'depth' => 60,
     'color' => 'Light Green',
-    'volume' => 0.15
+    'volume' => 100.15
 ];
 
 $cuccia = new DogBed($param);
