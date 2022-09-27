@@ -6,12 +6,14 @@ class Order extends Cart {
     protected $totalCost;
     protected $totalVolume;
     protected $shippingCost;
+    protected $user;
 
-    public function __construct($products) {
+    public function __construct($products, $user) {
         parent::__construct($products);
         $this->setTotalCost();
         $this->setTotalVolume();
         $this->setShippingCost();
+        $this->user = $user;
     }
 
     public function setTotalCost() {

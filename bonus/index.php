@@ -4,6 +4,7 @@ include_once __DIR__ . '/app/PetFood.php';
 include_once __DIR__ . '/app/Toy.php';
 include_once __DIR__ . '/app/DogBed.php';
 include_once __DIR__ . '/app/Order.php';
+include_once __DIR__ . '/app/User.php';
 
 $param = [
     'name' => 'Crocchette al manzo',
@@ -85,7 +86,9 @@ $products = [
     ]
 ];
 
-$order = new Order($products);
+$user = new User('Marco', 'Sangiorgi', 'example@email.com');
+
+$order = new Order($products, $user);
 
 var_dump($order);
 
