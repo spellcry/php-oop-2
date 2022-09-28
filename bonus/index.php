@@ -13,7 +13,10 @@ $param = [
     'brand' => 'PLATINUM NATURAL',
     'price' => 101.99,
     'expiration-date' => '29/01/2023',
-    'volume' => 0.5
+    'volume' => 0.5,
+    'scaffale' => 10,
+    'colonna' => 2,
+    'piano' => 4
 ];
 
 $crocchetteM = new PetFood($param);
@@ -25,7 +28,9 @@ $param = [
     'brand' => 'Metropets',
     'price' => 89.99,
     'expiration-date' => '17/05/2024',
-    'volume' => 0.7
+    'volume' => 0.7,
+    'scaffale' => 4,
+    'piano' => 1
 ];
 
 $crocchetteT = new PetFood($param);
@@ -38,7 +43,10 @@ $param = [
     'price' => 10.99,
     'type' => 'Pallina',
     'color' => 'Blue',
-    'volume' => 0.1
+    'volume' => 0.1,
+    'weight' => 0.5,
+    'scaffale' => 1,
+    'colonna' => 3
 ];
 
 $pallina = new Toy($param);
@@ -52,7 +60,10 @@ $param = [
     'length' => 100,
     'depth' => 60,
     'color' => 'Light Green',
-    'volume' => 100.15
+    'volume' => 100.15,
+    'scaffale' => 3,
+    'colonna' => 2,
+    'piano' => 10
 ];
 
 $cuccia = new DogBed($param);
