@@ -9,7 +9,11 @@ class Order extends Cart {
     private $user;
 
     public function __construct($products, $user) {
-        parent::__construct($products);
+        try {
+            parent::__construct($products);
+        } catch (Exception $e) {
+            throw new Exception("Ordine non valido.");
+        }
         $this->setTotalCost();
         $this->setTotalVolume();
         $this->setShippingCost();

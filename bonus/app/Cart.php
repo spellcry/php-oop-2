@@ -13,6 +13,7 @@ class Cart {
             $this->products = $filteredProducts;
         } else {
             $this->products = [];
+            throw new Exception("Il carrello è vuoto");
         }
     }
 

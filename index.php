@@ -87,12 +87,24 @@ $products = [
     ]
 ];
 
-$order = new Order($products);
+// $emptyCart = [];
 
-var_dump($order);
-
-foreach ( $order as $product ) {
-    var_dump($product);
+try {
+    $order = new Order($products);
+} catch (Exception $e) {
+    if ( $e->getMessage() == 'Ordine non valido.' )
+        $order = null;
 }
 
-echo "Costo Totale: " . $order->getTotalCost();
+echo "Ordine:";
+var_dump($order);
+
+if ( $order != null ) {
+    echo "Prodotti:";
+    foreach ( $order as $product ) {
+        var_dump($product);
+    }
+    echo "Costo Totale: " . $order->totalCost;
+} else {
+    echo "ERRORE!! Ordine non valido. Il carrello è vuoto.";
+}
